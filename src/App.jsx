@@ -4,32 +4,34 @@ import Blogs from "./components/Blogs/Blogs";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
-
   //Bookmarked Function & State
   const [bookmarked, setBookmarked] = useState([]);
   const handleBookMark = (blog) => {
     setBookmarked([...bookmarked, blog]);
   };
 
-
   //Marked As Read Function & State
   const [readTime, setReadTime] = useState(0);
 
-  const handleMarkAsRead = (reading_time)=>{
-    const newReadTime = readTime + reading_time
-    setReadTime(newReadTime)
-  }
+  const handleMarkAsRead = (time, id) => {
+    const newReadTime = readTime + time;
+    setReadTime(newReadTime);
+    handleRemoveFromBookMarked(id);
+  };
 
-
+  const handleRemoveFromBookMarked = (id) => {
+    const remainingBookMark = bookmarked.filter((mark) => mark.id !== id);
+    setBookmarked(remainingBookMark);
+  };
 
   return (
     <>
       <Navbar></Navbar>
       <div className="container flex text-center p-5">
         <div className="blogs-container w-[70%]">
-          <Blogs 
-          handleBookMark={handleBookMark}
-          handleMarkAsRead = {handleMarkAsRead}
+          <Blogs
+            handleBookMark={handleBookMark}
+            handleMarkAsRead={handleMarkAsRead}
           ></Blogs>
         </div>
         <div className="bookmark-container w-[30%]">

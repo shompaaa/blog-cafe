@@ -3,7 +3,7 @@ import { FaBookmark } from "react-icons/fa";
 
 
 const Blog = ({ blog , handleBookMark,handleMarkAsRead}) => {
-  const { cover, title,author,author_img,hashtags,reading_time } = blog;
+  const { cover, title,author,author_img,hashtags,reading_time,id } = blog;
   return (
     <div>
       <div className="card bg-base-100 w-96 shadow-sm m-5">
@@ -27,7 +27,7 @@ const Blog = ({ blog , handleBookMark,handleMarkAsRead}) => {
           </div>
           <div className="flex justify-between items-center">
             <div className="card-actions justify-start">
-            <button className="btn btn-primary" onClick={()=>handleMarkAsRead(reading_time)}>Mark As Read</button>
+            <button className="btn btn-primary" onClick={()=>handleMarkAsRead(reading_time,id)}>Mark As Read</button>
           </div>
           <div className="bookmark-icon flex gap-2 items-center text-gray-600">
             <p>{reading_time} min read</p>
