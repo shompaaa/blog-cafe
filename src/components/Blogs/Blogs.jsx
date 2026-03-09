@@ -14,7 +14,7 @@ const Blogs = ({handleBookMark, handleMarkAsRead}) => {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-5">Available Blogs: {blogs.length}</h1>
+      <h1 className="md:text-3xl font-bold mb-5">Available Blogs: {blogs.length}</h1>
       <div className="all-blogs grid md:grid-cols-2 gap-2">
         {blogs.map((blog) => (
           <Blog 

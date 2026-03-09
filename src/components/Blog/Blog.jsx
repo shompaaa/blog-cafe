@@ -6,7 +6,7 @@ const Blog = ({ blog , handleBookMark,handleMarkAsRead}) => {
   const { cover, title,author,author_img,hashtags,reading_time,id } = blog;
   return (
     <div>
-      <div className="card bg-base-100 w-96 shadow-sm m-5">
+      <div className="card bg-base-100 w-full md:w-96 shadow-sm m-5">
         <figure>
           <img src={cover} alt="" />
         </figure>
@@ -22,10 +22,10 @@ const Blog = ({ blog , handleBookMark,handleMarkAsRead}) => {
           </p>
           <div className="flex text-gray-500">
             {
-                hashtags.map(hash => <p>#{hash}</p>)
+                hashtags.map(hash => <p key={hash}>#{hash}</p>)
             }
           </div>
-          <div className="flex justify-between items-center">
+          <div className="md:flex justify-between items-center">
             <div className="card-actions justify-start">
             <button className="btn btn-primary" onClick={()=>handleMarkAsRead(reading_time,id)}>Mark As Read</button>
           </div>

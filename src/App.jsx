@@ -25,9 +25,9 @@ function App() {
   };
 
   return (
-    <>
+    <div className="my-0 md:mx-20">
       <Navbar></Navbar>
-      <div className="container flex text-center p-5">
+      <div className="container md:flex md:text-center p-5">
         <div className="blogs-container w-[70%]">
           <Blogs
             handleBookMark={handleBookMark}
@@ -46,7 +46,7 @@ function App() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
