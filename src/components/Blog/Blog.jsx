@@ -2,7 +2,7 @@ import React from "react";
 import { FaBookmark } from "react-icons/fa";
 
 
-const Blog = ({ blog }) => {
+const Blog = ({ blog , handleBookMark}) => {
   const { cover, title,author,author_img,hashtags,reading_time } = blog;
   return (
     <div>
@@ -31,7 +31,9 @@ const Blog = ({ blog }) => {
           </div>
           <div className="bookmark-icon flex gap-2 items-center text-gray-600">
             <p>{reading_time} min read</p>
-            <FaBookmark size={15} />
+            <button onClick={()=>handleBookMark(blog)}>
+                <FaBookmark size={15} />
+            </button>
           </div>
           </div>
         </div>
